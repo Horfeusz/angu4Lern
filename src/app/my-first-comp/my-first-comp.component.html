@@ -1,0 +1,19 @@
+<md-list style="max-width: 600px">
+  <h3 md-subheader>Osoby</h3>
+  <md-list-item *ngFor="let person of persons" appColores>
+    <md-icon md-list-icon>folder</md-icon>
+    <h4 md-line>{{person.firstName}} {{person.lastName}}</h4>
+
+    <md-input-container>
+      <input mdInput type="text" placeholder="Nazwisko" [(ngModel)]="person.lastName">
+    </md-input-container>
+
+    <button md-raised-button color="primary" (click)="select(person)">Wybierz</button>
+    <p md-line> {{person.createDate | date:"yyyy-MM-dd"}} </p>
+    <p md-line> {{person.createDate | myDate}} </p>
+  </md-list-item>
+</md-list>
+
+
+
+
